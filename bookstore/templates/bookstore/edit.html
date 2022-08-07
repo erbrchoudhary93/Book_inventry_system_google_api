@@ -1,0 +1,25 @@
+{% extends 'bookstore/base.html' %}
+
+{% block body %}
+        
+<div class="container my-5 offset-4">
+  <div class="row">
+    <div class="col-5">
+<form method="post" novalidate>
+    {% csrf_token %}
+
+    {{forms.as_p}}
+    <input class="btn btn-primary" type="submit" value="submit">
+</form>
+<a class="btn btn-primary my-2" href="{% url 'show_book' idd %}">Back To Store</a>
+{% if messages %}
+ {% for i in messages %}
+    {{ i }}
+  {%  endfor %}
+{% endif %}
+</div>
+</div>
+</div>
+
+{% endblock body %}
+    
